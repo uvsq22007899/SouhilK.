@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet de fin d'étude — National Geographic — Souhil</title>
+  <meta name="description" content="Projet de fin d'études — une expérience numérique National Geographic reliant contenus courts et contenus scientifiques approfondis.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css?v=10">
+</head>
+<body>
+
+  <canvas id="stars-bg" aria-hidden="true"></canvas>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" id="scrollBar"></div></div>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">SK<span class="logo__dot">.</span></a>
+    <nav class="site-nav">
+      <a href="../index.html#canopus">Origines</a>
+      <a href="../index.html#projects">Projets</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PROJECT DETAIL ===== -->
+    <section class="project-detail" id="project-detail">
+
+      <div class="project-decor" aria-hidden="true">
+        <img src="../img/x.svg" class="project-decor__item project-decor--x" alt="">
+        <img src="../img/apple.svg" class="project-decor__item project-decor--apple" alt="">
+        <img src="../img/y.svg" class="project-decor__item project-decor--y" alt="">
+        <img src="../img/earth.svg" class="project-decor__item project-decor--earth" alt="">
+      </div>
+
+      <a href="../index.html#projects" class="back-link reveal">← Retour aux projets</a>
+
+      <div class="project-hero reveal">
+        <span class="tag">// projet 01</span>
+        <h1>Projet de fin d'étude</h1>
+        <p class="project-hero__subtitle">National Geographic</p>
+      </div>
+
+      <article class="project-body reveal">
+        <p class="project-body__lead">Comment donner envie de découvrir davantage de contenus scientifiques à une génération qui passe plus de temps sur les réseaux sociaux que devant des documentaires ?</p>
+        <p>Pour y répondre, j'ai imaginé une expérience numérique reliant contenus courts des réseaux sociaux et contenus scientifiques approfondis de National Geographic, avec pour objectif de transformer une curiosité rapide en véritable envie d'apprendre.</p>
+        <p>Pour concrétiser cette approche, je m'appuie sur le paradoxe des jumeaux, un phénomène surprenant issu de la relativité restreinte, qui capte rapidement l'attention et amorce cette curiosité.</p>
+
+        <hr class="stage-divider">
+
+        <div class="project-media-row">
+          <div class="iphone-mockup">
+            <div class="iphone-mockup__notch"></div>
+            <video
+              id="hookVideo"
+              class="iphone-mockup__video"
+              src="../img/Hook.mov"
+              controls
+              playsinline
+              preload="metadata">
+            </video>
+            <div class="iphone-mockup__play" id="hookVideoPlay" aria-hidden="true"></div>
+          </div>
+
+          <div class="tools-list">
+            <div class="tools-list__item">
+              <img src="../img/SVG/Ae.svg" alt="Adobe After Effects" class="tools-list__icon">
+              <span>Adobe After Effects</span>
+            </div>
+            <div class="tools-list__item">
+              <img src="../img/SVG/Ai.svg" alt="Adobe Illustrator" class="tools-list__icon">
+              <span>Adobe Illustrator</span>
+            </div>
+            <div class="tools-list__item">
+              <img src="../img/SVG/Au.svg" alt="Adobe Audition" class="tools-list__icon">
+              <span>Adobe Audition</span>
+            </div>
+            <div class="tools-list__item">
+              <img src="../img/SVG/Ps.svg" alt="Adobe Photoshop" class="tools-list__icon">
+              <span>Adobe Photoshop</span>
+            </div>
+          </div>
+        </div>
+
+        <p>Cette vidéo, réalisée avec Adobe After Effects, Illustrator, Audition et Photoshop, a pour but d'inciter les jeunes à aller découvrir la réponse à ce phénomène intriguant sur la web app dédiée, qui explique en profondeur le paradoxe des jumeaux.</p>
+
+        <hr class="stage-divider">
+
+        <div class="project-media-row">
+          <div class="tools-list">
+            <div class="tools-list__item">
+              <img src="../img/SVG/vs.svg" alt="Visual Studio Code" class="tools-list__icon">
+              <span>Visual Studio Code</span>
+            </div>
+            <div class="tools-list__item">
+              <img src="../img/SVG/html.svg" alt="HTML" class="tools-list__icon">
+              <span>HTML</span>
+            </div>
+            <div class="tools-list__item">
+              <img src="../img/SVG/css.svg" alt="CSS" class="tools-list__icon">
+              <span>CSS</span>
+            </div>
+            <div class="tools-list__item">
+              <img src="../img/SVG/js.svg" alt="JavaScript" class="tools-list__icon">
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <a href="https://cheerful-hotteok-566aaf.netlify.app/" target="_blank" rel="noopener" class="browser-mockup">
+            <div class="browser-mockup__bar">
+              <span class="browser-mockup__dot"></span>
+              <span class="browser-mockup__dot"></span>
+              <span class="browser-mockup__dot"></span>
+              <span class="browser-mockup__url">cheerful-hotteok-566aaf.netlify.app</span>
+            </div>
+            <div class="browser-mockup__body">
+              <img src="../img/x.svg" alt="" class="browser-mockup__icon">
+              <span class="browser-mockup__cta">Découvrir la web app <span class="browser-mockup__arrow">↗</span></span>
+            </div>
+          </a>
+        </div>
+
+        <p>Développée avec Visual Studio Code en HTML, CSS et JavaScript, cette web app explique les fondamentaux du paradoxe des jumeaux, puis redirige progressivement vers des contenus National Geographic plus approfondis, répondant ainsi à la problématique initiale du projet.</p>
+
+        <hr class="stage-divider">
+
+        <div class="project-media-row">
+          <div class="tools-list">
+            <div class="tools-list__item">
+              <img src="../img/SVG/Id.svg" alt="Adobe InDesign" class="tools-list__icon">
+              <span>Adobe InDesign</span>
+            </div>
+          </div>
+
+          <a href="../pdf/WebDoc.pdf" target="_blank" rel="noopener" class="pdf-mockup">
+            <span class="pdf-mockup__badge">PDF</span>
+            <span class="pdf-mockup__text">
+              <span class="pdf-mockup__cta">Consulter le PDF <span class="pdf-mockup__arrow">↗</span></span>
+              <span class="pdf-mockup__filename">WebDoc.pdf</span>
+            </span>
+          </a>
+        </div>
+
+        <p>Ce webdocument, conçu avec Adobe InDesign, prolonge l'expérience pour les plus curieux souhaitant approfondir davantage mon projet de fin d'études.</p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <script src="../script.js?v=10"></script>
+  <script>
+    const hookVideo = document.getElementById('hookVideo');
+    const hookVideoPlay = document.getElementById('hookVideoPlay');
+    if (hookVideo && hookVideoPlay) {
+      hookVideo.addEventListener('play', () => hookVideoPlay.classList.add('is-hidden'));
+      hookVideo.addEventListener('pause', () => hookVideoPlay.classList.remove('is-hidden'));
+    }
+  </script>
+</body>
+</html>

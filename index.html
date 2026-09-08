@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Souhil — Portfolio</title>
+  <meta name="description" content="Portfolio de Souhil — expériences numériques simples, intuitives et mémorables.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+
+  <canvas id="stars-bg" aria-hidden="true"></canvas>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" id="scrollBar"></div></div>
+
+  <header class="site-header">
+    <span class="logo">SK<span class="logo__dot">.</span></span>
+    <nav class="site-nav">
+      <a href="#canopus">Présentation</a>
+      <a href="#projects">Projets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== INTRO + CANOPUS (pinned scroll morph — single traveling star) ===== -->
+    <section class="pin-wrapper" id="pinWrapper">
+      <div class="pin-stage" id="pinStage">
+
+        <!-- the ONE element: blue glow behind the video -> travels + turns into the white Canopus star -->
+        <div class="morph-circle" id="morphCircle">
+          <canvas class="star-plasma" id="morphPlasma"></canvas>
+        </div>
+
+        <canvas id="introCanvas" class="intro-video"></canvas>
+        <video
+          id="introVideo"
+          src="img/intro.mp4"
+          muted
+          playsinline
+          preload="auto"
+          style="position:fixed; left:-9999px; top:-9999px; width:1px; height:1px;">
+        </video>
+
+        <div class="canopus-text" id="canopusText">
+          <!-- invisible spacer: reserves the star's final spot in the layout, JS measures it, never rendered -->
+          <span class="star-anchor" id="starAnchor" aria-hidden="true"></span>
+          <div class="canopus-copy">
+            <span class="tag">// origines</span>
+            <p class="canopus-paragraph" id="canopusParagraph"
+               data-text="Récemment diplômé d'un Bac+3 en Webdesign &amp; Communication Graphique, je me définis comme un profil polyvalent, capable de passer facilement d'un logiciel à un autre, d'explorer de nouveaux outils et de m'adapter rapidement aux besoins d'un projet. Curieux et autonome, j'aime apprendre et développer de nouvelles compétences. Disponible dès maintenant, je suis à la recherche de nouvelles opportunités pour mettre ma polyvalence et ma créativité au service de nouveaux projets."></p>
+            <span class="canopus-cursor" aria-hidden="true">_</span>
+          </div>
+        </div>
+
+        <div class="scroll-cue" id="scrollCue">
+          <span>scroll</span>
+          <span class="scroll-cue__line"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects" id="projects">
+      <span class="tag reveal">// projets</span>
+      <h2 class="section-title reveal">Mon univers</h2>
+
+      <div class="project-grid">
+
+        <a class="project-star reveal" data-accent="blue" href="projects/alpha.html">
+          <div class="star star--project"><canvas class="star-plasma"></canvas></div>
+          <div class="project-info">
+            <span class="project-info__index">01</span>
+            <h3>PFE</h3>
+            <p>Projet de fin d'études<br>sur le paradoxe des jumeaux.</p>
+            <span class="project-info__stack">Projet scolaire</span>
+          </div>
+        </a>
+
+        <a class="project-star project-star--soon reveal" data-accent="white" href="projects/beta.html" data-soon="Bientôt disponible !">
+          <div class="star star--project"><canvas class="star-plasma"></canvas></div>
+          <div class="project-info">
+            <span class="project-info__index">02</span>
+            <h3>Communication visuelle</h3>
+            <p>Création de contenus print<br>et digital : posts, reels,<br>flyers et magazine.</p>
+            <span class="project-info__stack">Projet professionnel</span>
+          </div>
+        </a>
+
+        <a class="project-star reveal" data-accent="cyan" href="https://souhilkehli.framer.website/" target="_blank" rel="noopener">
+          <div class="star star--project"><canvas class="star-plasma"></canvas></div>
+          <div class="project-info">
+            <span class="project-info__index">03</span>
+            <h3>Portfolio Graphisme</h3>
+            <p>3 projets de graphisme<br>à découvrir.</p>
+            <span class="project-info__stack">Projet personnel</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+      <span class="tag reveal">// contact</span>
+      <h2 class="section-title reveal">Restons en contact</h2>
+      <p class="contact-text reveal">Si mon profil vous intéresse, n'hésitez pas à me contacter.</p>
+
+      <div class="contact-links reveal">
+        <a href="mailto:kehli.souhil4@gmail.com" class="contact-card">
+          <svg class="contact-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="M3 7l9 6 9-6"></path>
+          </svg>
+          <span>kehli.souhil4@gmail.com</span>
+        </a>
+
+        <span class="contact-divider" aria-hidden="true"></span>
+
+        <a href="tel:0695940324" class="contact-card">
+          <svg class="contact-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>06 95 94 03 24</span>
+        </a>
+      </div>
+
+      <footer class="site-footer reveal">
+        <span>© 2026 Souhil</span>
+      </footer>
+    </section>
+
+  </main>
+
+  <script src="script.js?v=10"></script>
+</body>
+</html>
