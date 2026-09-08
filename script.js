@@ -284,7 +284,9 @@ function registerPlasmaStar(canvas, getRamp) {
   const FRAME_COUNT = isSmallScreen ? 44 : 64;
   const frames = [];
   let framesReady = 0;
+  let firstFramePainted = false;
   canvasCtx.imageSmoothingQuality = 'high';
+  canvas.style.opacity = 0; // hidden until the first real frame lands — no black flash
 
   function seekTo(t) {
     return new Promise((resolve) => {
@@ -330,7 +332,11 @@ function registerPlasmaStar(canvas, getRamp) {
       const bitmap = await createImageBitmap(tmp);
       frames.push(bitmap);
       framesReady = frames.length;
-      if (i === 0) canvasCtx.drawImage(bitmap, 0, 0);
+      if (i === 0) {
+        canvasCtx.drawImage(bitmap, 0, 0);
+        firstFramePainted = true;
+        update(); // refresh opacity/transform now — don't wait for the next scroll/resize
+      }
     }
   }
 
@@ -390,7 +396,7 @@ function registerPlasmaStar(canvas, getRamp) {
 
     // 2. canvas fades out once it's finished scrubbing
     const videoOutT = ease(remap(progress, 0.3, 0.5));
-    canvas.style.opacity = 1 - videoOutT;
+    canvas.style.opacity = firstFramePainted ? (1 - videoOutT) : 0;
     canvas.style.transform = `translate(-50%, -50%) scale(${lerp(1, 0.94, videoOutT)})`;
 
     // 3. the single circle travels from behind the video to the star anchor + turns white
