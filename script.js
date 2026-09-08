@@ -334,6 +334,37 @@ function registerPlasmaStar(canvas, getRamp) {
     }
   }
 
+  // Mobile: unlock playback on first user interaction so the browser will
+  // load/allow seeking the media. Some mobile browsers delay loading or
+  // block seeking until an interaction occurs — this ensures preloadFrames
+  // runs either from loadeddata or right after a touch/click.
+  let _unlocked = false;
+  function unlockAndPreload() {
+    if (_unlocked) return;
+    _unlocked = true;
+    try {
+      video.muted = true;
+      video.playsInline = true;
+      video.setAttribute('webkit-playsinline', '');
+      const p = video.play();
+      if (p && typeof p.then === 'function') {
+        p.then(() => { video.pause(); }).catch(() => {/* ignore */}).finally(() => {
+          if (!framesReady) preloadFrames();
+        });
+      } else {
+        video.pause();
+        if (!framesReady) preloadFrames();
+      }
+    } catch (e) {
+      if (!framesReady) preloadFrames();
+    } finally {
+      document.removeEventListener('touchstart', unlockAndPreload);
+      document.removeEventListener('click', unlockAndPreload);
+    }
+  }
+  document.addEventListener('touchstart', unlockAndPreload, { passive: true });
+  document.addEventListener('click', unlockAndPreload, { passive: true });
+
   if (video.readyState >= 2) {
     preloadFrames();
   } else {
